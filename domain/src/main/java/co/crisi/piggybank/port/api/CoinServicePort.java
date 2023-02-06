@@ -6,6 +6,4 @@ public interface CoinServicePort {
 
     CoinDto save(CoinDto coinDto);
 
-    Long amountByValueAndPiggyBank(Long value, Long piggyBankId);
-
 }

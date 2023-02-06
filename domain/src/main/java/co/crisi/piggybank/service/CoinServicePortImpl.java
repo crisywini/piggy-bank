@@ -13,15 +13,8 @@ public class CoinServicePortImpl implements CoinServicePort {
         return coinPersistencePort.save(coinDto);
     }
 
-    @Override
-    public Long amountByValueAndPiggyBank(Long value, Long piggyBankId) {
-        return coinPersistencePort.findAll()
-                .stream()
-                .filter(coin -> coin.piggyBank().id().equals(piggyBankId))
-                .map(CoinDto::value)
-                .filter(val -> val.equals(value))
-                .reduce(Long::sum)
-                .orElse(0L);
+    public void setCoinPersistencePort(CoinPersistencePort coinPersistencePort){
+        this.coinPersistencePort = coinPersistencePort;
     }
 
 }

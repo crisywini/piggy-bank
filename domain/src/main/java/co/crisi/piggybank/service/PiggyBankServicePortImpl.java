@@ -1,10 +1,12 @@
 package co.crisi.piggybank.service;
 
+import co.crisi.piggybank.data.CoinDto;
 import co.crisi.piggybank.data.PiggyBankDto;
 import co.crisi.piggybank.exception.ResourceNotFoundException;
 import co.crisi.piggybank.port.api.PiggyBankServicePort;
 import co.crisi.piggybank.port.spi.PiggyBankPersistencePort;
 import java.util.Collections;
+import java.util.List;
 import lombok.val;
 
 public class PiggyBankServicePortImpl implements PiggyBankServicePort {
@@ -48,6 +50,20 @@ public class PiggyBankServicePortImpl implements PiggyBankServicePort {
     @Override
     public void deleteById(Long id) {
         piggyBankPersistencePort.deleteById(id);
+    }
+
+    @Override
+    public Long findCoinAmountByValueAnPiggyBankId(Long value, Long id) {
+        val piggyBank = findById(id);
+        return piggyBank.coins().stream()
+                .map(CoinDto::value)
+                .filter(val -> val.equals(value))
+                .reduce(Long::sum)
+                .orElse(0L);
+    }
+
+    public void setPiggyBankPersistencePort(PiggyBankPersistencePort piggyBankPersistencePort) {
+        this.piggyBankPersistencePort = piggyBankPersistencePort;
     }
 
 }
