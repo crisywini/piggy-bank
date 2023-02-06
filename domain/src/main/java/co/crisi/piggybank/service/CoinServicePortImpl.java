@@ -14,9 +14,10 @@ public class CoinServicePortImpl implements CoinServicePort {
     }
 
     @Override
-    public Long amountByValue(Long value) {
+    public Long amountByValueAndPiggyBank(Long value, Long piggyBankId) {
         return coinPersistencePort.findAll()
                 .stream()
+                .filter(coin -> coin.piggyBank().id().equals(piggyBankId))
                 .map(CoinDto::value)
                 .filter(val -> val.equals(value))
                 .reduce(Long::sum)
