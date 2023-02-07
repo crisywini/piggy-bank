@@ -3,7 +3,9 @@ package co.crisi.piggybank.service;
 import co.crisi.piggybank.data.CoinDto;
 import co.crisi.piggybank.port.api.CoinServicePort;
 import co.crisi.piggybank.port.spi.CoinPersistencePort;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class CoinServicePortImpl implements CoinServicePort {
 
     private CoinPersistencePort coinPersistencePort;

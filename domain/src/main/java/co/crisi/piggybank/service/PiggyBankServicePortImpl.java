@@ -6,8 +6,10 @@ import co.crisi.piggybank.exception.ResourceNotFoundException;
 import co.crisi.piggybank.port.api.PiggyBankServicePort;
 import co.crisi.piggybank.port.spi.PiggyBankPersistencePort;
 import java.util.Collections;
+import lombok.AllArgsConstructor;
 import lombok.val;
 
+@AllArgsConstructor
 public class PiggyBankServicePortImpl implements PiggyBankServicePort {
 
 
