@@ -7,8 +7,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class PiggyBank implements Serializable {
 
     @Id
