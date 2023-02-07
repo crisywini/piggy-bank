@@ -23,5 +23,5 @@ public class CoinController {
                     CoinDto coinDto) {
         return new ResponseEntity<>(coinServicePort.save(coinDto).id(), HttpStatus.CREATED);
     }
-    
+
 }

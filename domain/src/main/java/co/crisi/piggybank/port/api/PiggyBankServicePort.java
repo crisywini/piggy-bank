@@ -1,8 +1,6 @@
 package co.crisi.piggybank.port.api;
 
-import co.crisi.piggybank.data.CoinDto;
 import co.crisi.piggybank.data.PiggyBankDto;
-import java.util.List;
 
 public interface PiggyBankServicePort {
 
