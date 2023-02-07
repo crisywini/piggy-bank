@@ -2,6 +2,7 @@ package co.crisi.piggybank.mapper;
 
 import co.crisi.piggybank.data.PiggyBankDto;
 import co.crisi.piggybank.entity.PiggyBank;
+import java.util.List;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
@@ -21,6 +22,8 @@ public interface PiggyBankMapper {
 
         piggyBank.getCoins().forEach(coin -> coin.setPiggyBank(piggyBank));
     }
+
+    List<PiggyBankDto> mapToDtos(List<PiggyBank> piggyBanks);
 
 
 }
