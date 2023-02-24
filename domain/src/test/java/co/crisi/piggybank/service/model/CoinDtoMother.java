@@ -12,11 +12,11 @@ public final class CoinDtoMother {
     private static final Random RANDOM = new Random();
 
     public static CoinDto getRandomCoin(PiggyBankDto piggyBankDto) {
-        return new CoinDto(null, RANDOM.nextLong(), RANDOM.nextLong(), piggyBankDto);
+        return new CoinDto(null, RANDOM.nextLong(1L, 30L), RANDOM.nextLong(), piggyBankDto);
     }
 
     public static CoinDto getSavedCoin(CoinDto newCoin) {
-        return new CoinDto(RANDOM.nextLong(), newCoin.value(), newCoin.amount(), newCoin.piggyBank());
+        return new CoinDto(RANDOM.nextLong(1L, 30L), newCoin.value(), newCoin.amount(), newCoin.piggyBank());
     }
 
     public static List<CoinDto> getRandomCoins(PiggyBankDto piggyBankDto) {

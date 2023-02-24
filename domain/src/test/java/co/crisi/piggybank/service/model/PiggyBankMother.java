@@ -17,7 +17,7 @@ public class PiggyBankMother {
     }
 
     public static PiggyBankDto getRandomPiggyBankWithEmptyCoins(){
-        return new PiggyBankDto(RANDOM.nextLong(), new ArrayList<>());
+        return new PiggyBankDto(RANDOM.nextLong(1L,30L), new ArrayList<>());
     }
 
 }

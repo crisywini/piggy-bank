@@ -23,8 +23,7 @@ class PiggyBankServicePortImplTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        piggyBankServicePort = new PiggyBankServicePortImpl();
-        piggyBankServicePort.setPiggyBankPersistencePort(piggyBankPersistencePort);
+        piggyBankServicePort = new PiggyBankServicePortImpl(piggyBankPersistencePort);
     }
 
     @Test

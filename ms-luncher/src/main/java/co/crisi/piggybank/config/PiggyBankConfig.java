@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class PiggyBankConfig {
-    
+
     @Bean
     public PiggyBankPersistencePort piggyBankPersistence() {
         return new PiggyBankJpaAdapter();
