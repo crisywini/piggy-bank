@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/piggy-banks")
-public class PIggyBankController {
+public class PiggyBankController {
 
     @Autowired
     private PiggyBankServicePort piggyBankServicePort;
